@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
         end 
     end 
+    
+    def counts(users)
+        @count_microposts = users.microposts.count
+        @count_followings = users.followings.count
+        @count_followers = users.followers.count
+    end 
 end
